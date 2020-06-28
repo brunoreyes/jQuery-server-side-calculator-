@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <header>
+      <h1>Weekend Challenge #2</h1>
+    </header>
+    <main>
+      <div id="calculatorAndInventoryContainer">
+        <div id="outerCalculator">
+          <h2>Server Side Calculator</h2>
+          <div id="calculatorContainer">
+            <h4 id="calculatorTitle">
+              BRUNO <span id="model">TX-9159205</span>
+            </h4>
+            <form>
+              <input type="text" id="calculatorInput" placeholder="0" />
+              <button type="submit" id="clear">C</button>
+            </form>
+            <div id="numberContainer">
+              <br />
+              <button id="seven" class="number" type="button">7</button>
+              <button id="eight" class="number" type="button">8</button>
+              <button id="nine" class="number" type="button">9</button>
+              <button id="plus" class="operator" type="button">+</button>
+              <br />
+              <button id="four" class="number" type="button">4</button>
+              <button id="five" class="number" type="button">5</button>
+              <button id="six" class="number" type="button">6</button>
+              <button id="minus" class="operator" type="button">-</button>
+              <br />
+              <button id="one" class="number" type="button">1</button>
+              <button id="two" class="number" type="button">2</button>
+              <button id="three" class="number" type="button">3</button>
+              <button id="multiply" class="operator" type="button">*</button>
+              <br />
+              <button id="zero" class="number" type="button">0</button>
+              <button id="decimal" type="button">.</button>
+              <button id="equal" type="submit">=</button>
+              <button id="divide" class="operator" type="button">/</button>
+              <br />
+            </div>
+          </div>
+        </div>
+        <div id="outerHistory">
+          <h3 id="updatedCalculation"></h3>
+          <div>
+            <h2>Calculation Result</h2>
+            <span id="calculationResult"></span>
+            <h2>Calculation History</h2>
+            <ul id="calculatedHistory">
+              <!-- each of the previous calculations will 
+            show up here as a list item -->
+            </ul>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer></footer>
+  </body>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Michroma&display=swap"
+    rel="stylesheet"
+  />
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Changa:wght@300;400&display=swap"
+    rel="stylesheet"
+  />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="styles/style.css" />
+  <script src="vendors/jquery.js"></script>
+  <script src="scripts/client.js"></script>
+</html>
