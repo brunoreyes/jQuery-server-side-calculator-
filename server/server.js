@@ -40,33 +40,33 @@ app.post( '/calculation', ( req, res )=>{
   // res.sendStatus sends back an HTTP status code 201: something was created with the request that was received
   // 200: everything went well 
   // res.sendStatus(201); //not sure if it's code 201 or 200
-// })
+})
 
 // equalizer() calculates based on a switcher 
 function equalizer(calculation) {
-  let x = parseFloat(calculation.firstNumber);
-  let y = parseFloat(calculation.secondNumber);
-  let operation = calculation.operator;
-  let result;
+    let x = parseFloat(calculation.firstNumber);
+    let y = parseFloat(calculation.secondNumber);
+    let operation = calculation.operator;
+    let result;
 
-  // parseFloat will start at the beginning
-  // but it has to start with a # or space but no letters
+    // parseFlot will start at the beginning
+    // but it has to start with a # or space but no letters
 
-  switch (operation) {
-    case 'add':
-      result = x + y;
-      break;
-    case 'subtract':
-      result = x - y;
-      break;
-    case 'multiply':
-      result = x * y;
-      break;
-    case 'divide':
-      result = x / y;
-      break;
-    default:
-      result = "calculator error";
-  }
+    switch (operation) {
+      case 'add':
+        result = x + y;
+        break;
+      case 'subtract':
+        result = x - y;
+        break;
+      case 'multiply':
+        result = x * y;
+        break;
+      case 'divide':
+        result = x / y;
+        break;
+      default:
+        result = "calculator error";
+    }
   return result;
 }

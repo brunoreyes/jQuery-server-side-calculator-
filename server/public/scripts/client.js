@@ -9,6 +9,7 @@ let secondNumber = '';
 function onReady() {
   console.log("JQ");
   addEventListeners();
+  // $('#numberContainer').on('submit', '#equal', equalize (response) {
 
 } //end onReady()
 
@@ -70,10 +71,10 @@ function addEventListeners() {
   }); // end '.operator' click handler function
   
   // '#equal'
-  $('#numberContainer').on('submit', '#equal', function (calculating) {
+  $('#numberContainer').on('click', '#equal', function (response) {
     console.log('in #equal click handler function');
     // prevent page auto refreshing
-    calculating.preventDefault();
+    response.preventDefault();
     // store numbers & operators entered into
     // calculator into an object
     let calculation = {
@@ -82,7 +83,7 @@ function addEventListeners() {
       operator: operator
     };
     // sending calculation to server via addCalculation()
-    addCalculation(calculation);
+    addCalculation(response);
     addCalculationToHistory(response)
   }); // end '#equal' click handler function
 
@@ -97,7 +98,7 @@ function addEventListeners() {
     displayedOperator = undefined;
     // empty both number inputs and any results that are displayed on the DOM
     $('#calculationResult').empty();
-    $('#calculatorInput').empty();
+    $('#calculatorInput').val('');
   }); // end '#clear' click handler function  
 
   //'.number'
@@ -168,8 +169,7 @@ function updateCalculatedResult(response) {
 
 function addCalculationToHistory(response) {
   console.log("in showCalculation", response);
-
-    $("#calculatedHistory").append(`<li>${response}</li>`);
+response.preventDefault
+  $("#calculatedHistory").append(`<li>${response}</li>`);
   } //end addCalculationToHistory()
-
 
