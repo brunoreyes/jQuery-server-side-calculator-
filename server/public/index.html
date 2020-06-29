@@ -17,31 +17,32 @@
             <h4 id="calculatorTitle">
               BRUNO <span id="model">TX-9159205</span>
             </h4>
-            <form>
+            <div>
+              <!-- forms refresh automatically, stay away until you know exactly what they are capable of -->
               <input type="text" id="calculatorInput" placeholder="0" />
               <button type="submit" id="clear">C</button>
-            </form>
+            </div>
             <div id="numberContainer">
               <br />
               <button id="seven" class="number" type="button">7</button>
               <button id="eight" class="number" type="button">8</button>
               <button id="nine" class="number" type="button">9</button>
-              <button id="plus" class="operator" type="button">+</button>
+              <button id="add" name="add" class="operator" type="button">+</button>
               <br />
               <button id="four" class="number" type="button">4</button>
               <button id="five" class="number" type="button">5</button>
               <button id="six" class="number" type="button">6</button>
-              <button id="minus" class="operator" type="button">-</button>
+              <button id="subtract" name="subtract" class="operator" type="button">-</button>
               <br />
               <button id="one" class="number" type="button">1</button>
               <button id="two" class="number" type="button">2</button>
               <button id="three" class="number" type="button">3</button>
-              <button id="multiply" class="operator" type="button">*</button>
+              <button id="multiply" name="multiply" class="operator" type="button">*</button>
               <br />
               <button id="zero" class="number" type="button">0</button>
               <button id="decimal" type="button">.</button>
               <button id="equal" type="submit">=</button>
-              <button id="divide" class="operator" type="button">/</button>
+              <button id="divide" name="divide" class="operator" type="button">/</button>
               <br />
             </div>
           </div>
@@ -66,7 +67,6 @@
     href="https://fonts.googleapis.com/css2?family=Michroma&display=swap"
     rel="stylesheet"
   />
-
   <link
     href="https://fonts.googleapis.com/css2?family=Changa:wght@300;400&display=swap"
     rel="stylesheet"
