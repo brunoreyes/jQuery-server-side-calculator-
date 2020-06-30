@@ -23,7 +23,9 @@ function addCalculation(calculatorInput) {
   console.log('in addCalculation');
   // I want to prevent the page from reloading
   // to keep my calculation history growing
-  calculatorInput = $('#calculatorInput').val();
+
+  
+    //   calculatorInput = $('#calculatorInput').val();
   console.log("sending:", calculatorInput);
   $.ajax({
     //POST is a two-way street, GET is a one-way street
@@ -34,7 +36,7 @@ function addCalculation(calculatorInput) {
     .then(function (response) {
       console.log("back from server with:", response);
       updateCalculatedResult(response);
-      addCalculationToHistory(response)
+      // addCalculationToHistory(response)
     })
     .catch(function (err) {
       alert("error calculating recent input. see console for details");
@@ -123,10 +125,10 @@ function decimalFunction(){
   };// end decimalFunction click handler function
   
 
-function equalFunction(response){
+function equalFunction(){
   console.log('in #equal click handler function');
     // prevent page auto refreshing
-    response.preventDefault();
+    // response.preventDefault();
     // store numbers & operators entered into
     // calculator into an object
     let calculation = {
@@ -135,8 +137,8 @@ function equalFunction(response){
       operator: operator
     };
     // sending calculation to server via addCalculation()
-    addCalculation(response);
-    addCalculationToHistory(response)
+    addCalculation(calculation);
+    // addCalculationToHistory(response)
 }; // end '#equal' click handler function
   
 

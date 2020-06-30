@@ -22,7 +22,7 @@ app.listen(PORT, () => {
 
 // GET & POST Routes go here
 app.post( '/calculation', ( req, res )=>{
-  console.log('in /calculation GET');
+  console.log('in /calculation POST');
 
   // The data arrives here as "req.body", which is like an envelop that has alot of nonsense in it
   console.log(req.body);
@@ -32,28 +32,35 @@ app.post( '/calculation', ( req, res )=>{
   let calculation = req.body
 
   //here we are sending the data to a function
-  let result = equalizer(calculation).toString();
+  let equalizerCalculation = equalizer(calculation);
+  let result = equalizerCalculation.toString();
+console.log('Showing result:',result);
 
   // res.send takes whatever variable we have and sends it back to the client in this case it is 
-  res.send( result );
+  res.send(result);
 
   // res.sendStatus sends back an HTTP status code 201: something was created with the request that was received
   // 200: everything went well 
   // res.sendStatus(201); //not sure if it's code 201 or 200
 })
 
+
+
+
 // equalizer() calculates based on a switcher 
 function equalizer(calculation) {
+  console.log(calculation);
     let x = parseFloat(calculation.firstNumber);
     let y = parseFloat(calculation.secondNumber);
     let operation = calculation.operator;
-    let result;
+    let solvedResult;
     // parseFlot will start at the beginning
     // but it has to start with a # or space but no letters
 
   // for (let i = 0; i < Array.length; i++)
-    switch (operator) {
+    switch (operation) {
       case 'add':
+        
         solvedResult = x + y;
         break;
       case 'subtract':
@@ -73,5 +80,5 @@ function equalizer(calculation) {
     // if ('multiply' === operation) {
     //   result = x * y;
     // } else if ('divide' === operation) {
-  return number(result);
+  return solvedResult;
 }
