@@ -9,7 +9,7 @@ let secondNumber = '';
 function onReady() {
   console.log("JQ");
   addEventListeners();
-  // $('#numberContainer').on('submit', '#equal', equalize (response) {
+
 
 } //end onReady()
 
@@ -44,72 +44,20 @@ function addCalculation(calculatorInput) {
 
 function addEventListeners() {
   console.log('in addEventListeners');
-  
-  // '.operator'
-  $('#numberContainer').on('click', '.operator', function () {
-    console.log('in .operator click handler function');
-    if (firstNumber === '') { // if firstNumber hasn't been entered
-      alert('Please enter a number before using an operator.');
-    } else if (secondNumber === '') { // if firstNumber was entered but not secondnumber
-      // assign operator/displayedOperator variables based on the button that was clicked
-      operatorCall(this.name, $(this).text());
-      // update calculatorDisplay with selected numOne & operator
-      $('#calculatorInput').empty();
-      $('#calculatorInput').val(`${ firstNumber } ${ displayedOperator }`);
-    } else { // if both numOne && numTwo have been entered & operator is assigned:
-      // store inputted numbers & operators into an object
-      let calculation = {
-        firstNumber: firstNumber,
-        secondNumber: secondNumber,
-        operator: operator
-      };//end else
-    // send calculation to the server via addCalculation() function
-    addCalculation(calculation);
-      // assign operator/displayedOperator variables based on the button that was clicked
-      operatorCall(this.name, $(this).text());
-    } // end else 
-  }); // end '.operator' click handler function
-  
-  // '#equal'
-  $('#numberContainer').on('click', '#equal', function (response) {
-    console.log('in #equal click handler function');
-    // prevent page auto refreshing
-    response.preventDefault();
-    // store numbers & operators entered into
-    // calculator into an object
-    let calculation = {
-      firstNumber: firstNumber,
-      secondNumber: secondNumber,
-      operator: operator
-    };
-    // sending calculation to server via addCalculation()
-    addCalculation(response);
-    addCalculationToHistory(response)
-  }); // end '#equal' click handler function
+  $('#numberContainer').on('click', '.operator', operatorFunction) 
+  $('#numberContainer').on('click', '#equal', equalFunction);
+  $('#clear').on('click', clearFunction);  
+  $('#numberContainer').on('click', '.number', numberFunction) 
+  $('#numberContainer').on('click','#decimal', decimalFunction);
+} // end addEventListeners()
 
-  //'#clear'
-  $('#clear').on('click', function () {
-    console.log('in #clear click handler function');
-    // preventDefault
-    // reset numOne, numTwo, operator and displayedOperator variables
-    firstNumber = '';
-    secondNumber = '';
-    operator = undefined;
-    displayedOperator = undefined;
-    // empty both number inputs and any results that are displayed on the DOM
-    $('#calculationResult').empty();
-    $('#calculatorInput').val('');
-  }); // end '#clear' click handler function  
-
-  //'.number'
-  $('#numberContainer').on('click', '.number', function () {
+function numberFunction() {
     console.log('.number click handler function');
     // if only the 1st # is pressed bc opeator isn't defined bc isn't pressed
     // then only display first number
     if (operator === undefined) {
       // show only the firstNumber
       console.log(this);
-      
       firstNumber += $(this).text();
       console.log('firstNumber', firstNumber);
       $('#calculatorInput').empty();
@@ -122,22 +70,75 @@ function addEventListeners() {
       $('#calculatorInput').val(`${firstNumber} ${displayedOperator} ${secondNumber}`);
       console.log('secondNumber', secondNumber);
     } // end else
-  }); // end '.number' click handler function
+  }; // end '.number' click handler function
 
-    //'#decimal'
-  // $('#numberContainer').on('click', 'button', '#decimal', decimalFunction);
 
-} // end addEventListeners()
+  function operatorFunction(){
+  console.log('in .operator click handler function');
+  if (firstNumber === '') { // if firstNumber hasn't been entered
+    alert('Please enter a number before using an operator.');
+  } else if (secondNumber === '') { // if firstNumber was entered but not secondnumber
+    // assign operator/displayedOperator variables based on the button that was clicked
+    operatorCall(this.name, $(this).text());
+    // update calculatorDisplay with selected numOne & operator
+    $('#calculatorInput').empty();
+    $('#calculatorInput').val(`${ firstNumber } ${ displayedOperator }`);
+  } else { // if both numOne && numTwo have been entered & operator is assigned:
+    // store inputted numbers & operators into an object
+    let calculation = {
+      firstNumber: firstNumber,
+      secondNumber: secondNumber,
+      operator: operator
+    };//end else
+  // send calculation to the server via addCalculation() function
+  addCalculation(calculation);
+    // assign operator/displayedOperator variables based on the button that was clicked
+    operatorCall(this.name, $(this).text());
+  } // end else 
+}; // end '.operator' click handler function
+
+
+function clearFunction() {
+  console.log('in #clear click handler function');
+    // preventDefault
+    // reset numOne, numTwo, operator and displayedOperator variables
+    firstNumber = '';
+    secondNumber = '';
+    operator = undefined;
+    displayedOperator = undefined;
+    // empty both number inputs and any results that are displayed on the DOM
+    $('#calculationResult').empty();
+    $('#calculatorInput').val('');
+  }; // end '#clear' click handler function  
+
 
 function decimalFunction(){
     console.log('in #decimal click handler function');
-    event.preventDefault();
+    // event.preventDefault();
     let currentDisplay = $('#calculatorInput').val();
     // only if currentDisplay doesn't have a decimal at the end of it, add one
     if (currentDisplay.slice(-1) != '.') {
       $('#calculatorInput').val(currentDisplay + '.');
     } // end if
   };// end decimalFunction click handler function
+  
+
+function equalFunction(response){
+  console.log('in #equal click handler function');
+    // prevent page auto refreshing
+    response.preventDefault();
+    // store numbers & operators entered into
+    // calculator into an object
+    let calculation = {
+      firstNumber: firstNumber,
+      secondNumber: secondNumber,
+      operator: operator
+    };
+    // sending calculation to server via addCalculation()
+    addCalculation(response);
+    addCalculationToHistory(response)
+}; // end '#equal' click handler function
+  
 
 // sets the operator & displayedOperator
 function operatorCall(akaOperator, realOperator) {
@@ -168,8 +169,7 @@ function updateCalculatedResult(response) {
 }// end updateCalculatedResults
 
 function addCalculationToHistory(response) {
-  console.log("in showCalculation", response);
+  console.log("in addCalculationToHistory", response);
 response.preventDefault
-  $("#calculatedHistory").append(`<li>${response}</li>`);
+  $("#calculatedHistory").append(`<li>${response.val()}</li>`);
   } //end addCalculationToHistory()
-

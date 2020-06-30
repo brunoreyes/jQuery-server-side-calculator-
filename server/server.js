@@ -48,25 +48,30 @@ function equalizer(calculation) {
     let y = parseFloat(calculation.secondNumber);
     let operation = calculation.operator;
     let result;
-
     // parseFlot will start at the beginning
     // but it has to start with a # or space but no letters
 
-    switch (operation) {
+  // for (let i = 0; i < Array.length; i++)
+    switch (operator) {
       case 'add':
-        result = x + y;
+        solvedResult = x + y;
         break;
       case 'subtract':
-        result = x - y;
+        solvedResult = x - y;
         break;
       case 'multiply':
-        result = x * y;
+        solvedResult = x * y;
         break;
       case 'divide':
-        result = x / y;
+        solvedResult = x / y;
         break;
       default:
-        result = "calculator error";
+        solvedResult = "calculator error";
     }
-  return result;
+    console.log('operation is:', operation);
+
+    // if ('multiply' === operation) {
+    //   result = x * y;
+    // } else if ('divide' === operation) {
+  return number(result);
 }
