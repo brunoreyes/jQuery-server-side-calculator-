@@ -60,4 +60,6 @@ input {
 #outerCalculator {
   margin-right: 50px;
 }
-
+#calculationResult{
+  font-size: 25px;
+}

@@ -173,7 +173,7 @@ function addCalculationToHistory(response) {
   console.log("in addCalculationToHistory", response);
   response.preventDefault
   let display = $('#calculatorInput').val();
-  $("#calculatedHistory").append(`<li>${display} = ${response}</li>`);
+  $("#calculatedHistory").append(`<p>${display} = ${response}</p>`);
   firstNumber = '';
   secondNumber = '';
   operator = undefined;
