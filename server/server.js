@@ -34,14 +34,13 @@ app.post( '/calculation', ( req, res )=>{
   //here we are sending the data to a function
   let equalizerCalculation = equalizer(calculation);
   let result = equalizerCalculation.toString();
-console.log('Showing result:',result);
+  console.log('Showing result:',result);
 
   // res.send takes whatever variable we have and sends it back to the client in this case it is 
   res.send(result);
 
   // res.sendStatus sends back an HTTP status code 201: something was created with the request that was received
-  // 200: everything went well 
-  // res.sendStatus(201); //not sure if it's code 201 or 200
+  // res.sendStatus(201);
 })
 
 
@@ -60,7 +59,6 @@ function equalizer(calculation) {
   // for (let i = 0; i < Array.length; i++)
     switch (operation) {
       case 'add':
-        
         solvedResult = x + y;
         break;
       case 'subtract':
@@ -76,9 +74,5 @@ function equalizer(calculation) {
         solvedResult = "calculator error";
     }
     console.log('operation is:', operation);
-
-    // if ('multiply' === operation) {
-    //   result = x * y;
-    // } else if ('divide' === operation) {
   return solvedResult;
 }

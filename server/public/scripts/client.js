@@ -36,7 +36,7 @@ function addCalculation(calculatorInput) {
     .then(function (response) {
       console.log("back from server with:", response);
       updateCalculatedResult(response);
-      // addCalculationToHistory(response)
+      addCalculationToHistory(response);
     })
     .catch(function (err) {
       alert("error calculating recent input. see console for details");
@@ -138,7 +138,6 @@ function equalFunction(){
     };
     // sending calculation to server via addCalculation()
     addCalculation(calculation);
-    // addCalculationToHistory(response)
 }; // end '#equal' click handler function
   
 
@@ -172,6 +171,7 @@ function updateCalculatedResult(response) {
 
 function addCalculationToHistory(response) {
   console.log("in addCalculationToHistory", response);
-response.preventDefault
-  $("#calculatedHistory").append(`<li>${response.val()}</li>`);
+  // response.preventDefault
+  let display = $('#calculatorInput').val();
+  $("#calculatedHistory").append(`<li>${display} = ${response}</li>`);
   } //end addCalculationToHistory()
