@@ -44,26 +44,29 @@ the submit button via a POST.
 
 ## Screen Shot
 
-![Salary Calculator](https://raw.githubusercontent.com/brunoreyes/jquery-salary-calculator/master/Screen%20Shot%20of%20Salary%20Calculator.png)
+![Salary Calculator](https://raw.githubusercontent.com/brunoreyes/jquery-server-side-calculator/master/server/public/images/assignmentScreenshot.png?token=APG7A5J42NBMRGFASSVO5AS7AUSQU)
 
 ## Prerequisites
-No requirements at this time.
+install node.
+install express.
 
 ## Usage
-1. Add employee info by inputting info, then press 'submit' button.
+1. input math problem, then press 'submit' button to view results on the right.
 2. Now you can see your added info within the table.
-3. Notice on the lower right there is a calculated monthly total of the annual salaries of all employees.
+3. On the lower right you have a history of all your previous calculations.
 
 ## Built With
 -CSS!
 -HTML
 -jQuery
 -JavaScript
+-Node
+-Express
 
 ## License
 
 No license at this time.
 
 ## Acknowledgement
-Thank you to Robert Wolfe and Ross Hutchens for helping me with site functionality and styling
+Thank you to Robert Wolfe and Carl Wilcoxon for helping me with testing. 
 ## Support
