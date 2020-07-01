@@ -37,6 +37,7 @@ function addCalculation(calculatorInput) {
       console.log("back from server with:", response);
       updateCalculatedResult(response);
       addCalculationToHistory(response);
+      $("#calculatorInput").empty();
     })
     .catch(function (err) {
       alert("error calculating recent input. see console for details");
@@ -102,7 +103,6 @@ function numberFunction() {
 
 function clearFunction() {
   console.log('in #clear click handler function');
-    // preventDefault
     // reset numOne, numTwo, operator and displayedOperator variables
     firstNumber = '';
     secondNumber = '';
@@ -171,7 +171,12 @@ function updateCalculatedResult(response) {
 
 function addCalculationToHistory(response) {
   console.log("in addCalculationToHistory", response);
-  // response.preventDefault
+  response.preventDefault
   let display = $('#calculatorInput').val();
   $("#calculatedHistory").append(`<li>${display} = ${response}</li>`);
+  firstNumber = '';
+  secondNumber = '';
+  operator = undefined;
+  displayedOperator = undefined;
+  $('#calculatorInput').val('');
   } //end addCalculationToHistory()

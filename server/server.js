@@ -43,9 +43,6 @@ app.post( '/calculation', ( req, res )=>{
   // res.sendStatus(201);
 })
 
-
-
-
 // equalizer() calculates based on a switcher 
 function equalizer(calculation) {
   console.log(calculation);
@@ -55,8 +52,6 @@ function equalizer(calculation) {
     let solvedResult;
     // parseFlot will start at the beginning
     // but it has to start with a # or space but no letters
-
-  // for (let i = 0; i < Array.length; i++)
     switch (operation) {
       case 'add':
         solvedResult = x + y;
@@ -75,4 +70,4 @@ function equalizer(calculation) {
     }
     console.log('operation is:', operation);
   return solvedResult;
-}
+}// end function equalizer
