@@ -5,7 +5,8 @@
 ## Project Description
 
 I was tasked with creating a calculator that could:
-- Inputted numbers & math operators(+,-,/,*)
+
+- Input numbers & math operators(+,-,/,\*)
 - Create a calculation history
 - Prominately display calculator result
 - Add functionality to clear out calculator using 'C' botton
@@ -32,7 +33,6 @@ the submit button via a POST.
 
 ### Stretch Goals
 
-
 [x] Only allow the POST call to happen if all necessary input is ready.
 
 [X]_Data integrity is superfluously important! Sometimes users hit the "go button" without fully inputting the needed fields. Show an alert if they left something empty and don't send bad or incomplete data to the server._
@@ -41,21 +41,23 @@ the submit button via a POST.
 
 [X] _GETs are used to, well, get information from the server. POSTs are used to send new info to the server. DELETEs are used for, you guessed it, deleting info already on the server._
 
-
 ## Screen Shot
 
 ![Salary Calculator](https://raw.githubusercontent.com/brunoreyes/jquery-server-side-calculator/master/server/public/images/assignmentScreenshot.png?token=APG7A5J42NBMRGFASSVO5AS7AUSQU)
 
 ## Prerequisites
+
 install node.
 install express.
 
 ## Usage
+
 1. input math problem, then press 'submit' button to view results on the right.
 2. Now you can see your added info within the table.
 3. On the lower right you have a history of all your previous calculations.
 
 ## Built With
+
 -CSS!
 -HTML
 -jQuery
@@ -68,5 +70,7 @@ install express.
 No license at this time.
 
 ## Acknowledgement
-Thank you to Robert Wolfe and Carl Wilcoxon for helping me with testing. 
+
+Thank you to Robert Wolfe and Carl Wilcoxon for helping me with testing.
+
 ## Support
