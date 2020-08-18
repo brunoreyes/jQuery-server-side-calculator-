@@ -41,7 +41,7 @@ the submit button via a POST.
 
 [X] _GETs are used to, well, get information from the server. POSTs are used to send new info to the server. DELETEs are used for, you guessed it, deleting info already on the server._
 
-## Screen Shot
+## Screenshot
 
 ![Salary Calculator](https://tinyurl.com/y2tzlnd6)
 
