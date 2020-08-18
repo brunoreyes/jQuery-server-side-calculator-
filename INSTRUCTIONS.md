@@ -73,6 +73,6 @@ Build out the server-side logic to compute the numbers as appropriate. The serve
 
  [] _Anticipating a user's wants and adding the feature in the interface is often a logical progression that ends up in stretch goals for project._
 
-[] - Deploy to Heroku!
+[] -  Deploy to Heroku!
 
   _Deploying a project makes it available to the masses and is a necessary step for which to prepare when planning a project._
