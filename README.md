@@ -58,12 +58,12 @@ install express.
 
 ## Built With
 
--jQuery
--JavaScript
--Node
--Express
--CSS
--HTML
+- jQuery
+- JavaScript
+- Node
+- Express
+- CSS
+- HTML
 
 ## License
 
