@@ -43,7 +43,7 @@ the submit button via a POST.
 
 ## Screen Shot
 
-![Salary Calculator](https://raw.githubusercontent.com/brunoreyes/jquery-server-side-calculator/master/server/public/images/assignmentScreenshot.png?token=APG7A5J42NBMRGFASSVO5AS7AUSQU)
+![Salary Calculator](https://tinyurl.com/y2tzlnd6)
 
 ## Prerequisites
 
@@ -58,12 +58,12 @@ install express.
 
 ## Built With
 
--CSS!
--HTML
 -jQuery
 -JavaScript
 -Node
 -Express
+-CSS
+-HTML
 
 ## License
 
